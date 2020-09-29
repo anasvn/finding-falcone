@@ -1,0 +1,17 @@
+<button type="button" class="find-falcone btn" [class.btn-success]="checkAllDestinationAndVehiclesAreSet"
+    [class.btn-danger]="!checkAllDestinationAndVehiclesAreSet" [disabled]="!checkAllDestinationAndVehiclesAreSet"
+    (click)="findFalcone()">Find Falcone</button>
+<button type="button" class="btn btn-dark reset-button" (click)="resetData()">Reset</button>
+<label class="fixed-label">Total Time : {{getTotalTime}}</label>
+<div class="row content-section">
+    <div class="col-md-3" *ngFor="let item of selectedItems; let i = index">
+        <ng-container class="col-md-12 row planet-vehicle-container">
+            <app-planet [item]="item" [index]="i" [availablePlanets]="getAvailablePlanets"
+                (selectOption)="selectDestination($event)"></app-planet>
+            <app-vehicle [item]="item" [index]="i" [availableVehicles]="getAvailableVehicles(item.planets.distance)"
+                (selectOption)="selectVehicle($event)"></app-vehicle>
+
+        </ng-container>
+
+    </div>
+</div>

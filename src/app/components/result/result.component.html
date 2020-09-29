@@ -1,0 +1,20 @@
+<div>
+    <div class="container">
+        <ng-container *ngIf="falconeFound">
+            <h1 class="success">Congratulations! Falcone found</h1>
+            <div>
+                <img class="mx-auto d-block" src="assets/img/planets/{{planetName}}.png" alt="">
+                <label>Falcone location : {{planetName}}</label>
+                <label>Distance : {{distance}}</label>
+                <label>Vehicle : {{vehicleName}}</label>
+                <label>Total time taken for the search : {{time}}</label>
+            </div>
+        </ng-container>
+        <ng-container *ngIf="!falconeFound">
+            <h1 class="failed">Failed to find falcone</h1>
+        </ng-container>
+        <div class="back-to-home">
+            <button class="btn btn-primary" [routerLink]="['/']" routerLinkActive="router-link-active">Start Again</button>
+        </div>
+    </div>
+</div>

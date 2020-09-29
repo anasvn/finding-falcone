@@ -1,0 +1,27 @@
+.container {
+    color: rgb(34, 33, 33);
+
+    .success {
+        text-align: center;
+        color: green;
+    }
+
+    .failed {
+        text-align: center;
+        color: red;
+    }
+
+    img {
+        max-width: 100px;
+    }
+
+    .back-to-home {
+        padding-left: 45%;
+        padding-right: 50%;
+    }
+
+    label {
+        width: 100%;
+        text-align: center;
+    }
+}

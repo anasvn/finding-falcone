@@ -1,0 +1,20 @@
+<div *ngIf="item.planets.isSet" class="vehicle-section">
+    <img [src]="item.vehicles.imageUrl" />
+    <div class="text-center">
+        <div class="no-wrap">Name : {{item.vehicles.name}}</div>
+        <div class="no-wrap">Speed : {{item.vehicles.speed}}</div>
+        <div class="no-wrap">Max distance : {{item.vehicles.maxDistance}}</div>
+        <div class="btn-group" dropdown [dropup]=true [isDisabled]="!availableVehicles.length">
+            <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle mx-auto mb-3"
+                [class.btn-success]="item.vehicles.isSet" [class.btn-danger]="!item.vehicles.isSet"
+                aria-controls="dropdown-animated">
+                Vehicle for {{item.planets.name}}<span class="caret"></span>
+            </button>
+            <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu drop-down-menu" role="menu"
+                aria-labelledby="button-animated">
+                <li role="menuitem" *ngFor="let vehicle of availableVehicles" (click)="selectVehicle(index,vehicle)">
+                    {{vehicle.name}} ({{vehicle.total_no}})</li>
+            </ul>
+        </div>
+    </div>
+</div>

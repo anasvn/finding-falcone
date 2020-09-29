@@ -1,0 +1,35 @@
+.no-wrap {
+  white-space: nowrap;
+}
+
+.find-falcone {
+  position: fixed;
+  top: 29px;
+  right: 10px;
+  z-index: 2;
+}
+
+.reset-button {
+  position: fixed;
+  top: 29px;
+  right: 130px;
+  z-index: 2;
+}
+
+.fixed-label {
+  position: fixed;
+  top: 68px;
+  right: 15px;
+  z-index: 2;
+  color: black;
+}
+
+.planet-vehicle-container {
+  display: flexbox;
+}
+
+
+.content-section {
+  width: 100%;
+  margin: auto;
+}

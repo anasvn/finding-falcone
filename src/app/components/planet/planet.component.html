@@ -1,0 +1,19 @@
+<div class="planet-section">
+    <img [src]="item.planets.imageUrl" />
+    <div class="text-center">
+        <div class="no-wrap">Name : {{item.planets.name}}</div>
+        <div class="no-wrap">Distance : {{item.planets.distance}}</div>
+        <div class="btn-group" dropdown>
+            <button id="button-animated" dropdownToggle type="button" class="btn dropdown-toggle mx-auto mb-3"
+                [class.btn-success]="item.planets.isSet" [class.btn-danger]="!item.planets.isSet"
+                aria-controls="dropdown-animated">
+                Destination {{ index + 1 }}<span class="caret"></span>
+            </button>
+            <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu drop-down-menu" role="menu"
+                aria-labelledby="button-animated">
+                <li role="menuitem" *ngFor="let planet of availablePlanets"
+                    (click)="selectDestination(index,planet)">{{planet.name}}</li>
+            </ul>
+        </div>
+    </div>
+</div>
